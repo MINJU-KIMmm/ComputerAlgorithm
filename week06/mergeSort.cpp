@@ -3,13 +3,13 @@
 #include <Windows.h>
 #include <time.h>
 
-//ÇÕº´Á¤·Ä
+//í•©ë³‘ì •ë ¬
 #define MAX_SIZE 15
 int sorted[MAX_SIZE];
 
 void merge(int list[], int left, int mid, int right) {
 	int i = left, j = mid + 1, k = left;
-	int l;//¹Ýº¹¹® À§ÇÑ º¯¼ö
+	int l;//ë°˜ë³µë¬¸ ìœ„í•œ ë³€ìˆ˜
 
 	while (i <= mid && j <= right) {
 		if (list[i] <= list[j])
@@ -29,12 +29,12 @@ void merge(int list[], int left, int mid, int right) {
 
 void merge_sort(int list[], int left, int right) {
 	int mid;
-	// ºÐÇÒÇÒ ¼ö ÀÖÀ¸¸é
+	// ë¶„í• í•  ìˆ˜ ìžˆìœ¼ë©´
 	if (left < right) {
 		mid = (left + right) / 2;
 		merge_sort(list, left, mid);
 		merge_sort(list, mid + 1, right);
-		merge(list, left, mid, right); //Á¤º¹
+		merge(list, left, mid, right); //ì •ë³µ
 	}
 }
 
@@ -43,7 +43,7 @@ int main() {
 	srand(time(NULL));
 	for (int i = 0; i < MAX_SIZE; i++) {
 		list[i] = rand() % 100;
-		//Áßº¹ Á¦°Å
+		//ì¤‘ë³µ ì œê±°
 		for (int j = 0; j < i; j++)
 			if (list[i] == list[j])
 				i--;
