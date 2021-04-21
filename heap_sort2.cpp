@@ -17,7 +17,7 @@ void upHeap(HeapType* h) {
 	int i = h->heap_size;
 	int key = h->heap[i];
 
-	//·çÆ®°¡ ¾Æ´Ñ °æ¿ì, ºÎ¸ğ³ëµåÀÇ °ªº¸´Ù ÀÛÀº °æ¿ì swap
+	//ë£¨íŠ¸ê°€ ì•„ë‹Œ ê²½ìš°, ë¶€ëª¨ë…¸ë“œì˜ ê°’ë³´ë‹¤ ì‘ì€ ê²½ìš° swap
 	while ((i != 1) && (key < h->heap[i / 2])) {
 		h->heap[i] = h->heap[i / 2];
 		i /= 2;
@@ -29,8 +29,8 @@ void upHeap(HeapType* h) {
 void downHeap(HeapType* h) {
 	int temp = h->heap[1];
 	int parent = 1, child = 2;
-	while (child <= h->heap_size) {//1¹ø
-		if ((child < h->heap_size) && (h->heap[child] > h->heap[child + 1])) {//³» ¿À¸¥ÂÊ¿¡µµ ¶Ç ³ëµå°¡ ÀÖ´Ù 3¹ø
+	while (child <= h->heap_size) {//1ë²ˆ
+		if ((child < h->heap_size) && (h->heap[child] > h->heap[child + 1])) {//ë‚´ ì˜¤ë¥¸ìª½ì—ë„ ë˜ ë…¸ë“œê°€ ìˆë‹¤ 3ë²ˆ
 			child++;
 		}
 
@@ -52,7 +52,7 @@ void insertItem(HeapType* h, int key) {
 
 int removeMin(HeapType* h) {
 	int key = h->heap[1];
-	h->heap[1] = h->heap[h->heap_size]; // ·çÆ®¿¡ ¸¶Áö¸· ³Ö¾îÁÜ
+	h->heap[1] = h->heap[h->heap_size]; // ë£¨íŠ¸ì— ë§ˆì§€ë§‰ ë„£ì–´ì¤Œ
 	h->heap_size -= 1;
 	downHeap(h);
 	return key;
@@ -84,7 +84,7 @@ void printArray(int list[], int n) {
 	printf("\n");
 }
 
-//Á¦ÀÚ¸® Á¤·Ä
+//ì œìë¦¬ ì •ë ¬
 void inPlaceHeapSort(HeapType* h) {
 	int size = h->heap_size;
 	int key;
