@@ -35,7 +35,7 @@ void findMatrix(int A[][COLS], int key) {
 	while (r < ROWS) {
 		index = findRow(A[r], key);
 		if (index >= 0) {
-			printf("%dÇà %d¿­¿¡¼­ %d ¹ß°ß\n", r, index, key);
+			printf("%dÃ‡Ã  %dÂ¿Â­Â¿Â¡Â¼Â­ %d Â¹ÃŸÂ°ÃŸ\n", r, index, key);
 			return;
 		}
 		else r++;
