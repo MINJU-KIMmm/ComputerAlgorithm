@@ -4,7 +4,7 @@
 
 #define MAX_SIZE 15
 #define SWAP(x,y,t) ((t)=(x),(x)=(y), (y)=(t))
-//Äü Á¤·Ä
+//í€µ ì •ë ¬
 
 int partition(int list[], int left, int right) {
 	int pivot, temp, low, high;
@@ -21,7 +21,7 @@ int partition(int list[], int left, int right) {
 			high--;
 		while (list[high] > pivot);
 
-		//Á¤·Ä°úÁ¤ Ãâ·Â
+		//ì •ë ¬ê³¼ì • ì¶œë ¥
 		for (int i = 0; i < MAX_SIZE; i++)
 			printf("[%d] ", list[i]);
 		printf("\nlow=%d, high=%d\n", low, high); getchar();
@@ -30,13 +30,13 @@ int partition(int list[], int left, int right) {
 			SWAP(list[low], list[high], temp);
 	} while (low < high);
 
-	SWAP(list[left], list[high], temp); //list[high]=pivotº¸´Ù ÀÛÀº °Í Áß °¡Àå ¿À¸¥ÂÊ °ª
+	SWAP(list[left], list[high], temp); //list[high]=pivotë³´ë‹¤ ìž‘ì€ ê²ƒ ì¤‘ ê°€ìž¥ ì˜¤ë¥¸ìª½ ê°’
 	return high;
 }
 void quick_sort(int list[], int left, int right) {
 	if (left < right) {
 		int q = partition(list, left, right);
-		quick_sort(list, left, q - 1); //q´Â ÀÌ¹Ì Á¤·ÄÀÌ µÈ °Í-> ÀÌÁ¦ Á¤·Ä¿¡¼­ ºüÁ®¾ß ÇÔ
+		quick_sort(list, left, q - 1); //qëŠ” ì´ë¯¸ ì •ë ¬ì´ ëœ ê²ƒ-> ì´ì œ ì •ë ¬ì—ì„œ ë¹ ì ¸ì•¼ í•¨
 		quick_sort(list, q + 1, right);
 	}
 }
