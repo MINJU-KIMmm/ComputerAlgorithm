@@ -64,7 +64,7 @@ void radix_Sort(int list[], int n) {
 	
 	for (d = 0; d < DIGITS; d++) {
 		for (i = 0; i < n; i++)
-			enqueue(&queues[(list[i] / factor)%10], list[i]);// Ã¹Â°ÀÚ¸® À§Ä¡¿¡ list[i] Áý¾î³ÖÀ½
+			enqueue(&queues[(list[i] / factor)%10], list[i]);// ì²«ì§¸ìžë¦¬ ìœ„ì¹˜ì— list[i] ì§‘ì–´ë„£ìŒ
 		
 		print_buckets(queues);
 		
